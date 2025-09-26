@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pink Strawberry Macarons — You can eat me</title>
+  <meta name="description" content="Delicate pink strawberry macarons. A playful page with a tasty quote: 'you can eat me'.">
+  <style>
+    :root{
+      --pink-1:#ffd9e6;
+      --pink-2:#ff7fbf;
+      --accent:#ff4d94;
+      --card:#ffffffcc;
+      --glass: rgba(255,255,255,0.7);
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;background: radial-gradient(circle at 10% 10%,var(--pink-1),var(--pink-2));
+      display:flex;align-items:center;justify-content:center;padding:2rem;color:#33032f}
+    .wrap{max-width:1000px;width:100%;display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:center}
+    .hero{padding:2rem;border-radius:18px;background:linear-gradient(180deg,var(--glass),rgba(255,255,255,0.55));box-shadow:0 8px 30px rgba(0,0,0,0.12)}
+    h1{margin:0 0 .5rem;font-size:2.2rem;letter-spacing:0.5px}
+    p.lead{margin:0 0 1rem;font-size:1.05rem;line-height:1.45}
+    .quote{font-weight:700;font-size:1.6rem;color:var(--accent);margin:.5rem 0}
+    .macaron-img{width:100%;height:320px;object-fit:cover;border-radius:12px;border:6px solid rgba(255,255,255,0.6)}
+    .card{background:var(--card);padding:1.25rem;border-radius:12px}
+    .meta{display:flex;gap:.5rem;align-items:center;margin-top:.75rem}
+    .meta span{background:rgba(51,3,47,0.06);padding:.35rem .6rem;border-radius:999px;font-size:.85rem}
+    .cta{display:flex;gap:.75rem;margin-top:1rem}
+    .btn{padding:.6rem 1rem;border-radius:999px;border:0;font-weight:600;cursor:pointer}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-ghost{background:transparent;border:2px solid rgba(51,3,47,0.06)}
+    .right{padding:1rem;border-radius:18px;background:rgba(255,255,255,0.85);box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+    .right h2{margin-top:0}
+    .ingredients{list-style:none;padding:0;margin:0 0 1rem 0}
+    .ingredients li{padding:.35rem 0;border-bottom:1px dashed rgba(51,3,47,0.06)}
+    footer{margin-top:1rem;font-size:.82rem;color:rgba(51,3,47,0.6)}
+    @media(max-width:900px){.wrap{grid-template-columns:1fr;}.macaron-img{height:260px}}
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main">
+    <section class="hero" aria-labelledby="title">
+      <h1 id="title">Pink Strawberry Macarons</h1>
+      <p class="lead">Light, airy, and perfectly pink — a little bite of joy. These strawberry macarons are delicate sandwich cookies with a fruity cream filling.</p>
+
+      <!-- Image: upload your image to the same S3 bucket and name it 'macaron.jpg' or change the src to your image path -->
+      <img src="macaron.jpg" alt="Three pink strawberry macarons on a white plate" class="macaron-img" onerror="this.style.opacity=.7;this.nextElementSibling.style.display='block'">
+      <div style="display:none;color:#5b1033;margin-top:.5rem;">(Tip: If the image doesn't load, upload <code>macaron.jpg</code> to your bucket or edit the <code>src</code>.)</div>
+
+      <div class="card" role="article" aria-label="macaron info">
+        <div class="quote">"you can eat me"</div>
+        <div class="meta">
+          <span>Strawberry</span>
+          <span>Handmade</span>
+          <span>Delicate</span>
+        </div>
+        <div class="cta">
+          <button class="btn btn-primary" onclick="alert('Yum! Imagine biting into a sweet strawberry macaron 💕')">Take a bite</button>
+          <button class="btn btn-ghost" onclick="document.getElementById('recipe').scrollIntoView({behavior:'smooth'})">See recipe</button>
+        </div>
+      </div>
+
+      <footer>Made with ❤️ for macaron lovers.</footer>
+    </section>
+
+    <aside class="right" id="recipe" aria-labelledby="recipe-title">
+      <h2 id="recipe-title">Quick recipe</h2>
+      <ul class="ingredients">
+        <li>100g almond flour</li>
+        <li>100g icing sugar</li>
+        <li>70g egg whites (aged)</li>
+        <li>30g caster sugar</li>
+        <li>Strawberry jam or buttercream</li>
+      </ul>
+      <p style="margin:0">Bake at 150°C for 12–14 minutes. Fill with your favorite strawberry buttercream.</p>
+      <div style="margin-top:1rem;font-size:.9rem;color:rgba(51,3,47,0.7)">Share this tasty page — or host it on Amazon S3 as <strong>index.html</strong>.</div>
+    </aside>
+  </main>
+</body>
+</html>
