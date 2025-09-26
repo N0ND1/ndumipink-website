@@ -57,3 +57,6 @@ Here’s the bucket policy I used to make the website public:
 ✅ Final Result
 
 The static website was successfully deployed on AWS S3 and works through the public endpoint link. 🎉
+
+
+http://ndumipink.s3-website-us-east-1.amazonaws.com
